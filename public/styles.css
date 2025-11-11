@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: rgb(0, 136, 255);
+    --light-bg-color:rgb(53, 153, 207);
+    --box-shadow-color:rgb(58, 161, 251);
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:aliceblue;
+
+    color: var(--primary-color);
+}
+
+ .section-title{
+   text-transform: capitalize;
+   text-align: center;
+   font-size: 2rem;
+   letter-spacing: 2px;
+   margin-bottom: 3.5rem;
+   margin-top: 1rem;
+}
+.btn{
+    text-decoration: none;
+    color: azure;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    font-size: 1.5rem;
+}
+.btn:hover{
+    color: var(--primary-color);
+    background-color: white;
+    border: 2px solid var(--primary-color);
+   
+}
+
+ /* Navbar */
+ .navbar{
+    background:transparent;
+ }
+ .navbar-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem 5rem;
+ }
+ .logo a{
+    font-family: 'Lobster', cursive;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    font-size:2rem;
+    text-decoration:none;
+ }
+ .logo a:active,
+ .logo a:visited,
+ .logo a:link{
+    color: var(--primary-color);
+ }
+ .nav-links{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10rem;
+ }
+ .nav-links a{
+    display: inline-block;
+    margin-right:1.5rem;
+    padding: 0.25em 0.5em;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 1.2rem;
+ }
+ 
+ .nav-links a:active,
+ .nav-links a:visited,
+ .nav-links a:link{
+    color: var(--primary-color)
+ }
+ .nav-links a:hover{
+    background-color: var(--primary-color);
+    color: azure;
+    border-radius: 5px;
+    font-weight: 400;
+    
+ }
+ @media screen and (max-width:900px){
+ 
+  .navbar-center{
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .nav-links{
+   margin: 0;
+  }
+  .nav-links a{
+   border-bottom: 2px solid var(--primary-color);
+  }
+ }
+
+ /* About */
+
+ .about-section{
+    width:85vw;
+    max-width: 40rem;
+    margin:0 auto; 
+ }
+ .about-section p {
+    line-height: 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+  }
+  .about-section .section-title{
+   text-decoration: underline;
+   font-size: 3rem;
+  }
+ /* Error */
+ .error-page {
+    display: flex;
+    justify-content: center;
+  }
+  .error-container {
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  /* loading container */
+
+  .loading-container{
+   height: 100vh;
+   width:100vw;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   z-index: 10;
+   /* background-color: rgba(0, 0, 0, 0.238); */
+  }
+ .spinner{
+   height: 100px;
+   width: 100px;
+   border: 5px solid;
+   border-color: var(--primary-color) transparent var(--primary-color) transparent;
+   border-radius: 50%;
+   animation: spin 1.5s linear infinite;
+ }
+
+ @keyframes spin {
+   0%{
+      transform: rotate(0deg);
+   }
+   100%{
+      transform: rotate(360deg);
+   }
+ }
+
+ /* Cocktail List */
+
+ /* .section{
+   padding: 5rem 0;
+ } */
+.cocktails-center{
+   width: 85vw;
+   max-width: 1170px;
+   margin: 0 auto;
+   display: grid;
+   row-gap: 2rem;
+   column-gap: 2rem;
+}
+@media screen and (min-width:576px) {
+   .cocktails-center{
+      grid-template-columns: repeat(auto-fill, minmax(338.8px,1fr))
+   }
+}
+
+/* Cocktail */
+.cocktail{
+   /* background-color: rgba(0, 0, 0, 0.085); */
+   display:grid;
+   grid-template-rows: auto 1fr;
+   border-radius: 5px;
+   color: black;
+   box-shadow: 0 0 20px var(--box-shadow-color);
+}
+
+.cocktail img{
+   height: 20rem;
+   object-fit:cover;
+   width: 100%;
+   display: block;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+.cocktail-footer{
+   padding: 1.5rem;
+   background: transparent;
+}
+.cocktail-footer h3,
+.cocktail-footer h4,
+.cocktail-footer p {
+  margin-bottom: 0.3rem;
+  color: var(--primary-color);
+}
+.cocktail-footer h3 {
+  font-size: 2rem;
+}
+.cocktail-footer p {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+@media screen {
+   
+}
+
+/* Search Form */
+
+.hero-form{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 4rem;
+}
+.search-form{
+   background-color: var(--light-bg-color);
+   margin: 0 auto ;
+   width: 80vw ;
+   max-width: 40rem;
+   padding: 2rem 2.5rem;
+   border-radius: 20px;
+   
+}
+.form-control label{
+   display: block;
+   margin-bottom: 1.25rem;
+   letter-spacing: 0.25rem;
+   font-weight: bold;
+   font-size: 1.3rem;
+   color: white;
+}
+.form-control input{
+   width: 100%;
+   font-size: 1.25rem;
+   border: none;
+   border-color: transparent;
+   padding: 0.5rem 1rem;
+   color: var(--primary-color);
+   border-radius: 15px;
+   outline: none;
+   
+}
+.hero{
+   display: grid;
+   grid-template-columns: 60% 40%;
+   width: 100vw;
+   position: relative;
+}
+
+.text-wrapper{
+   display: flex;
+}
+
+.text-wrapper ul{
+   list-style: none;
+   height: 80px;
+   line-height: 80px;
+   overflow: hidden;
+}
+
+.text-wrapper ul li{
+   font-size: 40px;
+   position: relative;
+   top: 0;
+   animation: slide 20s steps(2) 2s infinite;
+   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+@keyframes slide {
+   100%{
+      top: -150px;
+   }
+}
+.text-wrapper ul li{
+   position: relative;
+}
+.text-wrapper ul li::after{
+   content: '';
+   position: absolute;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   border-left: 2px solid rgba(0, 0, 0, 0.516);
+   animation: typing 10s steps(40) 2s infinite;
+   background-color: aliceblue;
+}
+@keyframes typing {
+ 
+   100%{
+      left: calc(100% + 20px);
+      margin: 0 -35p 0 35px;
+   }
+}
+
+.hero-img{
+   height: 500px;
+   width: 900px;
+   margin-top: -80px;
+
+}
+.hero-img img{
+   width: 100%;
+   height: 100%;
+}
+
+@media screen and (max-width:900px) {
+   .hero{
+      grid-template-columns: 100%;
+      margin: 3rem 0;
+   }
+   .text-wrapper{
+      display: none;
+   }
+   .hero-img{
+      display: none;
+   }
+   .search-form{
+      width: 90vw;
+      max-width: 90vw;
+      padding: 1rem 1rem;
+   }
+}
+
+/* single cocktail  */
+
+.cocktail-section{
+   padding: 2rem 3rem;
+}
+.btn-drink{
+   margin-left: 2rem;
+}
+.cocktail-section .section-title{
+   font-size: 3rem;
+}
+.drink-info{
+   display: flex;
+   flex-direction: column;
+   margin-left: 7rem;
+   margin-top: 2rem;
+}
+.drink-data{
+   margin: 0.5rem 0;
+}
+.drink-data h3{
+   background-color: var(--primary-color);
+   color: white;
+   border-radius: 8px;
+   margin-right: 1rem;
+   display: inline-block;
+   font-size: 1.5rem;
+   padding: 3px 8px;
+}
+.drink-data span{
+   margin-left: 8px;
+   font-size: 1.3rem;
+}
+.drink .cocktail-img{
+   height: 400px;
+   width: 400px;
+   margin: 0 auto;
+}
+.drink .cocktail-img img{
+   height: 100%;
+   width: 100%;
+   border-radius: 20px;
+}
+
+@media screen and (max-width:900px) {
+   .cocktail-section{
+      padding: 2rem 1rem;
+   }
+   .drink-info{
+      margin-left: 0.5rem;
+   }
+   .drink .cocktail-img{
+      height: 150px;
+      width: 150px;
+   }
+}
